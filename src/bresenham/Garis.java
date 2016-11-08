@@ -106,12 +106,19 @@ public class Garis extends JPanel{
         }
         
         //Gambar garis sejajar koordinat layar Y-,X+
+        while(y > yend)
+        {
+            y--;
+            g.drawRect(x, y, 1, 1);
+            System.out.println("Titik yang digambar ("+x+","+y+")");
+        }
         while(y < yend)
         {
             y++;
             g.drawRect(x, y, 1, 1);
             System.out.println("Titik yang digambar ("+x+","+y+")");
         }
+        
         
         //Gambar string titik awal dan akhir
         g.setColor(Color.YELLOW);
