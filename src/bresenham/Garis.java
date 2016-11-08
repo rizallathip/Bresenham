@@ -105,19 +105,23 @@ public class Garis extends JPanel{
             System.out.println("Titik yang digambar ("+x+","+y+")");
         }
         
-        //Gambar garis sejajar koordinat layar Y-,X+
-        while(y > yend)
+        //Gambar garis sejajar koordinat layar x==xend
+        if(x >= xend)
         {
-            y--;
-            g.drawRect(x, y, 1, 1);
-            System.out.println("Titik yang digambar ("+x+","+y+")");
+            while(y > yend)
+            {
+                y--;
+                g.drawRect(x, y, 1, 1);
+                System.out.println("Titik yang digambar ("+x+","+y+")");
+            }
+            while(y < yend)
+            {
+                y++;
+                g.drawRect(x, y, 1, 1);
+                System.out.println("Titik yang digambar ("+x+","+y+")");
+            }
         }
-        while(y < yend)
-        {
-            y++;
-            g.drawRect(x, y, 1, 1);
-            System.out.println("Titik yang digambar ("+x+","+y+")");
-        }
+        
         
         
         //Gambar string titik awal dan akhir
